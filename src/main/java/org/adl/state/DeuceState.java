@@ -2,7 +2,7 @@ package org.adl.state;
 
 import org.adl.TennisScoreComputer;
 
-public class DeuceState extends GameState {
+public class DeuceState extends AbstractState {
 
     public DeuceState(TennisScoreComputer context) {
         super(context);

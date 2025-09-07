@@ -5,9 +5,6 @@ public class Main {
         String match = "ABABAA";
 
         TennisScoreComputer tennisScoreComputer = new TennisScoreComputer();
-
-        for (char player :  match.toCharArray()) {
-            tennisScoreComputer.pointWonBy(player);
-        }
+        tennisScoreComputer.computeScore(match);
     }
 }

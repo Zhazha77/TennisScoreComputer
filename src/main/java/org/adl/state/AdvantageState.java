@@ -2,7 +2,7 @@ package org.adl.state;
 
 import org.adl.TennisScoreComputer;
 
-public class AdvantageState extends GameState {
+public class AdvantageState extends AbstractState {
 
     public AdvantageState(TennisScoreComputer context) {
         super(context);
@@ -16,5 +16,10 @@ public class AdvantageState extends GameState {
     @Override
     public String BMarksAPoint() {
         return "";
+    }
+
+    @Override
+    public String getScore() {
+        return String.format("Player %s has the advantage", context.getPlayerAPoints() > context.getPlayerBPoints() ? "A" : "B");
     }
 }

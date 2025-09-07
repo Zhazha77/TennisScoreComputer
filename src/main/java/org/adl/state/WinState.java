@@ -2,7 +2,7 @@ package org.adl.state;
 
 import org.adl.TennisScoreComputer;
 
-public class WinState extends GameState {
+public class WinState extends AbstractState {
     public WinState(TennisScoreComputer context) {
         super(context);
     }
@@ -18,8 +18,7 @@ public class WinState extends GameState {
     }
 
     @Override
-    public void PrintScore() {
-        System.out.printf("Player %s wins the game\n", context.getPlayerAPoints() > context.getPlayerBPoints() ? "A" : "B");
-
+    public String getScore() {
+        return String.format("Player %s wins the game", context.getPlayerAPoints() > context.getPlayerBPoints() ? "A" : "B");
     }
 }
