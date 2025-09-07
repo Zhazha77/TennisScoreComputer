@@ -9,12 +9,13 @@ public class DeuceState extends AbstractState {
     }
 
     @Override
-    public String AMarksAPoint() {
-        return "";
+    public AbstractState AMarksAPoint() {
+        return new AdvantageState(context, 'A');
     }
 
     @Override
-    public String BMarksAPoint() {
-        return "";
+    public AbstractState BMarksAPoint() {
+        return new AdvantageState(context, 'B');
+
     }
 }

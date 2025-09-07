@@ -3,22 +3,26 @@ package org.adl.state;
 import org.adl.TennisScoreComputer;
 
 public class WinState extends AbstractState {
-    public WinState(TennisScoreComputer context) {
+
+    private final char winner;
+
+    public WinState(TennisScoreComputer context, char winner) {
         super(context);
+        this.winner = winner;
     }
 
     @Override
-    public String AMarksAPoint() {
-        return "";
+    public AbstractState AMarksAPoint() {
+        return new WinState(context,winner);
     }
 
     @Override
-    public String BMarksAPoint() {
-        return "";
+    public AbstractState BMarksAPoint() {
+        return new WinState(context,winner);
     }
 
     @Override
     public String getScore() {
-        return String.format("Player %s wins the game", context.getPlayerAPoints() > context.getPlayerBPoints() ? "A" : "B");
+        return String.format("Player %c wins the game", winner);
     }
 }

@@ -2,7 +2,7 @@ package org.adl;
 
 public class Main {
     public static void main(String[] args) {
-        String match = "ABABAA";
+        String match = "ABABABAA";
 
         TennisScoreComputer tennisScoreComputer = new TennisScoreComputer();
         tennisScoreComputer.computeScore(match);

@@ -9,12 +9,24 @@ public class RegularState extends AbstractState {
     }
 
     @Override
-    public String AMarksAPoint() {
-        return "";
+    public AbstractState AMarksAPoint() {
+        if(context.getPlayerBPoints() == 3 && context.getPlayerAPoints() == 3){
+            return new DeuceState(context);
+        }
+        else if(context.getPlayerAPoints() > 3){
+            return new WinState(context, 'A');
+        }
+        return new RegularState(context);
     }
 
     @Override
-    public String BMarksAPoint() {
-        return "";
+    public AbstractState BMarksAPoint() {
+        if(context.getPlayerBPoints() == 3 && context.getPlayerAPoints() == 3){
+            return new DeuceState(context);
+        }
+        else if(context.getPlayerBPoints() > 3){
+            return new WinState(context, 'B');
+        }
+        return new RegularState(context);
     }
 }

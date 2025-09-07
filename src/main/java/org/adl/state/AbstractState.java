@@ -9,8 +9,8 @@ public abstract class AbstractState {
         this.context = context;
     }
 
-    public abstract String AMarksAPoint();
-    public abstract String BMarksAPoint();
+    public abstract AbstractState AMarksAPoint();
+    public abstract AbstractState BMarksAPoint();
 
     public String getScore() {
         return String.format("Player A : %s / Player B : %s", formatScore(context.getPlayerAPoints()), formatScore(context.getPlayerBPoints()));

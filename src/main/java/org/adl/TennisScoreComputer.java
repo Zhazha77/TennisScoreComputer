@@ -15,25 +15,28 @@ public class TennisScoreComputer {
 
     public void computeScore(String match) {
         for (char player :  match.toCharArray()) {
-            this.pointWonBy(player);
+            this.gameState = pointWonBy(player);
+            System.out.println(this.getScore());
         }
     }
 
-    public void pointWonBy(char player) {
+    public AbstractState pointWonBy(char player) {
         if (player == 'A') {
-            onAWon();
+            return onAWon();
         }
         else {
-            onBWon();
+            return onBWon();
         }
     }
 
-    public void onAWon() {
+    public AbstractState onAWon() {
         playerAPoints++;
+        return gameState.AMarksAPoint();
     }
 
-    public void onBWon() {
+    public AbstractState onBWon() {
         playerBPoints++;
+        return gameState.BMarksAPoint();
     }
 
     public int getPlayerAPoints() {
