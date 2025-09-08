@@ -2,6 +2,9 @@ package org.adl.state;
 
 import org.adl.TennisScoreComputer;
 
+/**
+ * Class representing the advantage state of a tennis game.
+ */
 public class AdvantageState extends AbstractState {
 
     private char advantagedPlayer;

@@ -2,6 +2,9 @@ package org.adl.state;
 
 import org.adl.TennisScoreComputer;
 
+/**
+ * Class representing the regular state of a tennis game, before reaching deuce or win state.
+ */
 public class RegularState extends AbstractState {
 
     public RegularState(TennisScoreComputer context) {

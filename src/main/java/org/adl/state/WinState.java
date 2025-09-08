@@ -2,6 +2,9 @@ package org.adl.state;
 
 import org.adl.TennisScoreComputer;
 
+/**
+ * Class representing the win state of a tennis game.
+ */
 public class WinState extends AbstractState {
 
     private final char winner;
