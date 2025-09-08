@@ -50,8 +50,4 @@ public class TennisScoreComputer {
     public String getScore() {
         return this.gameState.getScore();
     }
-
-    public void setGameState(AbstractState gameState) {
-        this.gameState = gameState;
-    }
 }

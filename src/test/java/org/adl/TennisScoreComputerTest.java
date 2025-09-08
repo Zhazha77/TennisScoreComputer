@@ -49,10 +49,17 @@ class TennisScoreComputerTest {
         assertEquals("Player A : 40 / Player B : 30", scoreComputer.getScore());
     }
 
-    // Deuce case
+    // Deuce cases
 
     @Test
-    void scoreIsDeuce() {
+    void scoreIsDeuceA() {
+        TennisScoreComputer scoreComputer = new TennisScoreComputer();
+        scoreComputer.computeScore("ABABBA");
+        assertEquals("Player A : 40 / Player B : 40", scoreComputer.getScore());
+    }
+
+    @Test
+    void scoreIsDeuceB() {
         TennisScoreComputer scoreComputer = new TennisScoreComputer();
         scoreComputer.computeScore("ABABAB");
         assertEquals("Player A : 40 / Player B : 40", scoreComputer.getScore());
@@ -72,6 +79,20 @@ class TennisScoreComputerTest {
         TennisScoreComputer scoreComputer = new TennisScoreComputer();
         scoreComputer.computeScore("ABABABB");
         assertEquals("Player B has the advantage", scoreComputer.getScore());
+    }
+
+    @Test
+    void scoreIsAdvantageLostForA() {
+        TennisScoreComputer scoreComputer = new TennisScoreComputer();
+        scoreComputer.computeScore("ABABABAB");
+        assertEquals("Player A : 40 / Player B : 40", scoreComputer.getScore());
+    }
+
+    @Test
+    void scoreIsAdvantageLostForB() {
+        TennisScoreComputer scoreComputer = new TennisScoreComputer();
+        scoreComputer.computeScore("ABABABBA");
+        assertEquals("Player A : 40 / Player B : 40", scoreComputer.getScore());
     }
 
     // Win cases
